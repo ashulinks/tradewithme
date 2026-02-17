@@ -26,6 +26,26 @@
   padding: 2rem 1rem; /* responsive padding */
 }
 
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;  /* cover entire section */
+  background: linear-gradient(
+    to bottom,
+    #fff 0%,
+    rgba(255, 255, 255, 0) 80%,
+    rgba(255, 255, 255, 0) 90%,
+    #fff 100%
+  );
+  pointer-events: none;  /* doesn’t block clicks */
+  z-index: 1;
+}
+
+.hero > * {
+  position: relative;  /* put content above overlay */
+  z-index: 2;
+}
+
 .hero h1 {
   font-size: clamp(1.5rem, 5vw, 3rem); /* scales with viewport */
   margin-bottom: 1rem;
