@@ -2,11 +2,19 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
 .hero {
   height: 100vh;
+  min-height: 100vh; /* fill full viewport height */
+  width: 100%;
+  /* ✅ make background image fully visible */
+  background-size: contain; /* instead of cover */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fff;  /* White fill if image doesn’t cover */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,16 +23,16 @@
   /*background: linear-gradient(135deg, #f0f0f5, #fff); */
   /*background: url('/main.png') center/cover no-repeat; */
   color: #fff;
-  padding: 0 1rem;
+  padding: 2rem 1rem; /* responsive padding */
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: clamp(1.5rem, 5vw, 3rem); /* scales with viewport */
   margin-bottom: 1rem;
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
   margin-bottom: 2rem;
   /*color: #555; */
 }
@@ -80,23 +88,30 @@
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
+.hero,
+
 .productSection {
   height: 100vh;
+  min-height: 100vh;        /* allow height to grow */
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0 1rem;
-  background-size: cover;
+  padding: 2rem 1rem; /* responsive padding */
+  /* ✅ make background image fully visible */
+  background-size: contain; /* instead of cover */
   background-position: center;
+  background-repeat: no-repeat;
+   background-color: #fff;  /* White fill if image doesn’t cover */
   transition: background 0.5s;
   background-attachment: fixed; /* Parallax base */
   position: relative;
 }
 
 .productSection h2 {
-  font-size: 4rem;          /* Big Apple-style headline */
+  font-size: clamp(1.5rem, 5vw, 3rem); /* scales with viewport */
   font-weight: 600;
   letter-spacing: -0.02em;
   margin-bottom: 1rem;
@@ -104,13 +119,21 @@
 }
 
 .productSection p {
-  font-size: 1.4rem;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
   font-weight: 400;
   max-width: 600px;
   line-height: 1.6;
 }
 
 @media (max-width: 768px) {
+  .hero,
+  
+  .productSection {
+   background-size: contain;   /* 🔑 prevents cropping */
+    min-height: auto;
+   padding: 4rem 1.5rem;       /* give content breathing room */
+  }
+
   .productSection h2 {
     font-size: 2.5rem;
   }

@@ -7,6 +7,7 @@ export default function Home() {
   
   const sectionsRef = useRef([]);
 
+  // Fade-in observer
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => {
@@ -38,22 +39,22 @@ export default function Home() {
       </section>
 
       {/* Product Sections */}
-      <section ref={el => (sectionsRef.current[0] = el)} id="BTC" className={`${styles.productSection} ${styles.fadeIn}`} style={{ background: 'url(/btc.jpg) center/cover no-repeat', color: '#fff' }}>
+      <section ref={el => (sectionsRef.current[0] = el)} id="BTC" className={`${styles.productSection} ${styles.fadeIn}`} style={{ background: 'url(/btc.jpg) center/contain no-repeat', color: '#fff' }}>
         <h2 className={styles.blackText}>Bitcoin</h2>
         <p className={styles.blackText}>Bitcoin Daily and Weekly Swing Trading</p>
       </section>
 
-       <section ref={el => (sectionsRef.current[1] = el)} id="ETH" className={`${styles.productSection} ${styles.fadeIn}`} style={{ background: 'url(/eth.jpg) center/cover no-repeat', color: '#fff' }}>
+       <section ref={el => (sectionsRef.current[1] = el)} id="ETH" className={`${styles.productSection} ${styles.fadeIn}`} style={{ background: 'url(/eth.jpg) center/contain no-repeat', color: '#fff' }}>
         <h2 className={styles.blackText}>Ethereum</h2>
         <p className={styles.blackText}>Ethereum Daily and Weekly Swing Trading</p>
       </section>
 
-      <section ref={el => (sectionsRef.current[2] = el)} id="XRP" className={`${styles.productSection} ${styles.fadeIn}`} style={{ background: 'url(/xrp.jpg) center/cover no-repeat', color: '#fff' }}>
+      <section ref={el => (sectionsRef.current[2] = el)} id="XRP" className={`${styles.productSection} ${styles.fadeIn}`} style={{ background: 'url(/xrp.jpg) center/contain no-repeat', color: '#fff' }}>
         <h2 className={styles.blackText}>Ripple</h2>
         <p className={styles.blackText}>Ripple Daily and Weekly Swing Trading</p>
       </section>
 
-      <section ref={el => (sectionsRef.current[3] = el)} id="CRYPTO10" className={`${styles.productSection} ${styles.fadeIn}`} style={{ background: 'url(/crypto10.jpg) center/cover no-repeat', color: '#fff' }}>
+      <section ref={el => (sectionsRef.current[3] = el)} id="CRYPTO10" className={`${styles.productSection} ${styles.fadeIn}`} style={{ background: 'url(/crypto10.jpg) center/contain no-repeat', color: '#fff' }}>
         <h2 className={styles.blackText}>Crypto 10 Index</h2>
         <p className={styles.blackText}>Crypto10 Daily and Weekly Swing Trading</p>
       </section>
